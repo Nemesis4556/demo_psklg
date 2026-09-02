@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/*
+  Font ikilisi
+  ------------
+  Newsreader (display/serif): Klasik, edebi bir kitap serifi. Başlıklarda
+  kullanıldığında "danışmanlık ofisi"nden çok "editoryal bir dergi" hissi
+  verir; italik kesimi alıntılar ve vurgular için sıcaklık katar.
+  Karla (body/sans): Yumuşak köşeli, hümanist bir grotesk. Manrope'a göre
+  daha sakin ve daha az "kurumsal teknoloji" hissi taşır; uzun metinlerde
+  (SSS, hakkımda) okunabilirliği yüksektir.
+*/
+@import "@fontsource/newsreader/400.css";
+@import "@fontsource/newsreader/500.css";
+@import "@fontsource/newsreader/600.css";
+@import "@fontsource/newsreader/500-italic.css";
+@import "@fontsource/newsreader/600-italic.css";
+@import "@fontsource/karla/400.css";
+@import "@fontsource/karla/500.css";
+@import "@fontsource/karla/600.css";
+@import "@fontsource/karla/700.css";
+
+/*
+  Renk sistemi — "Sessiz Güven" paleti
+  ------------------------------------
+  Mobilya projesindeki sıcak krem + altın ikilisinden bilinçli olarak
+  uzaklaşıldı. Bunun yerine tek bir mor-antrasit ("erik") nötr ailesi,
+  serin/lavanta tonlu bir zemin ve tamamlayıcı olarak sıcak olmayan bir
+  "çini mavisi" vurgu rengi kullanılıyor. Mavi burada "spa/wellness"
+  klişesindeki gradyanlı turkuaz değil, tek katman düz bir "dusty indigo" —
+  güven ve sakinliği çağrıştırırken soğuk/klinik durmaması için erik ailesiyle
+  aynı ton sıcaklığında tutuldu. İkinci, çok daha az kullanılan bir "toz gülü"
+  rengi alıntı işaretleri ve küçük vurgular için sıcaklık dengesi sağlıyor.
+*/
+:root {
+  --color-paper: #ffffff;
+  --color-mist: #f1eef4;
+  --color-ink: #211d28;
+  --color-ink-soft: #5b5566;
+  --color-ink-faint: #8f889b;
+  --color-line: #e2dce8;
+
+  --color-accent: #4a5578;
+  --color-accent-deep: #363f5c;
+  --color-accent-soft: #dde1ee;
+
+  --color-rose: #96677a;
+  --color-rose-soft: #ece0e3;
+
+  --font-display: "Newsreader", "Georgia", serif;
+  --font-body: "Karla", "Segoe UI", sans-serif;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-mist: var(--color-mist);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-line: var(--color-line);
+  --color-accent: var(--color-accent);
+  --color-accent-deep: var(--color-accent-deep);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-rose: var(--color-rose);
+  --color-rose-soft: var(--color-rose-soft);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
